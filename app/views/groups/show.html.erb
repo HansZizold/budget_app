@@ -1,0 +1,15 @@
+<h2 class = "w-full bg-blue-600 text-white text-center mb-1 pb-2 text-xl"><%= @cat.name %>: $<%= @cat.total_amount(@cat.id) %></h2>
+<div class = "flex flex-col bg-gray-100 w-full">
+  <% @opers.each do |oper| %>
+    <div class = "flex flex-row justify-between mx-4 mb-1 bg-gray-300">
+      <div class="w-[20%] pl-4 py-2"><%= oper.operation.name %></div>
+      <div class = "flex flex-col justify-between pr-4 py-2"><%= oper.operation.amount %></div>
+    </div>
+  <% end %>
+
+  <%= link_to new_operation_path do %>
+    <div class="mx-4">
+      <button class = "w-full border-2 bg-gray-300 hover:bg-blue-600 hover:text-white">ADD NEW TRANSACTION</button>
+    </div>
+  <% end %>
+</div>
