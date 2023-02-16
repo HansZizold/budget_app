@@ -28,6 +28,8 @@ group1.operations.create(name: 'Water', amount: 80.50, user: user1)
 group1.operations.create(name: 'Light', amount: 201.65, user: user1)
 group2.operations.create(name: 'Restaurant', amount: 285.00, user: user1)
 group2.operations.create(name: 'Movies', amount: 84.00, user: user1)
+group10.operations.create(name: 'Internet', amount: 299.00, user: user)
+group10.operations.create(name: 'Fixed Line', amount: 31.10, user: user)
 
 oper1.groups.create(name: 'Supplies', icon: 'supplies.png', user: user1)
 

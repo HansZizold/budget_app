@@ -20,6 +20,7 @@
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
 - [❓ FAQ (OPTIONAL)](#faq)
+- [🙏 Copyright](#copyrights)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -61,11 +62,39 @@
   </ul>
 </details>
 
+<details>
+<summary>Styling</summary>
+  <ul>
+    <li><a href="https://tailwindcss.com/">Tailwind</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>Authentication</summary>
+  <ul>
+    <li><a href="https://github.com/heartcombo/devise">Devise</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>Authorization</summary>
+  <ul>
+    <li><a href="https://github.com/CanCanCommunity/cancancan">CanCanCan</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>Testing</summary>
+  <ul>
+    <li><a href="https://github.com/rspec/rspec-rails">Rspec</a></li>
+  </ul>
+</details>
+
 ### Key Features <a name="key-features"></a>
 
 - **Users can register and log in, so that the data is private to them.**
 - **Users must be logged-in to use the app**
-- **Users can introduce new transactions associated with a category**
+- **Users can introduce new transactions associated with some categories**
 - **Users can see the money spent on each category**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -80,14 +109,12 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-To get a local copy up and running, follow these steps.
-
 ### Prerequisites
 
 In order to run this project you need:
 
 - An editor of your preference, for example VSCODE
-- Ruby 3.1.2 or newer
+- Ruby 3.1.3 or newer
 - Rails 7.0.4 or newer
 - GIT
 - NPM
@@ -97,64 +124,25 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-    git clone https://github.com/HansZizold/blogapp
-    cd ./blogapp
+    git clone https://github.com/HansZizold/budget_app
+    cd ./budget_app
 
 ### Install
 
 Install this project with:
 
-    rails new blogapp
+    rails new .
     bundle install
-
-### Deployment
-
-To deploy the project you need to create the database, you can use the following commands:
-
-  -- TABLE CREATION
-  rails generate migration CreateUsers name:string photo:string bio:text posts_counter:integer
-  rails generate migration CreateComments text:text
-  rails generate migration CreateLikes
-  rails generate migration CreatePosts title:string text:text comment_counter:integer like_counter:integer
-
-  --FOREIGN KEYS
-  rails generate migration AddUserRefToComments user:references
-  rails generate migration AddPostRefToComments post:references
-  rails generate migration AddUserRefToLikes user:references
-  rails generate migration AddPostRefToLikes post:references
-  rails generate migration AddUserRefToPosts user:references
-
-  --RENAME user_id to author_id
-  rails generate migration ChangeColumnName
-  --MIGRATION FILE CONTENT
-    class ChangeColumnName < ActiveRecord::Migration[7.0]
-      def change
-        rename_column :posts, :user_id, :author_id
-        rename_column :likes, :user_id, :author_id
-        rename_column :comments, :user_id, :author_id
-      end
-    end
-
-  -- DEFAUKT VALUES FOR COUNTERS
-  rails generate migration CounterDefaultValues
-  --MIGRATION FILE CONTENT
-  class CounterDefaultValues < ActiveRecord::Migration[7.0]
-    def change
-      change_column_default :users, :posts_counter, 0
-      change_column_default :posts, :comment_counter, 0
-      change_column_default :posts, :like_counter, 0
-    end
-  end
-
-Finally you can run:
-
-  rails db: migrate;
 
 ### Usage
 
 To run the project, execute the following command:
 
     rails server
+
+if you want to modify styles & let tailwind update:
+
+    rails tailwindcss:watch
 
 ### Run tests
 
@@ -166,26 +154,19 @@ To run tests, run the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Hans Zizold**
+<img src="https://ca.slack-edge.com/T47CT8XPG-U038AVDKLJK-c3a58fad94e4-512" alt="Hans" width="40" height="40" /> 
+
+**Hans Zizold**
 
 - GitHub:[@githubhandle](https://github.com/HansZizold) 
 - Twitter:[@twitterhandle](https://twitter.com/hanzio27) 
 - LinkedIn:[LinkedIn](https://www.linkedin.com/in/hans-paul-zizold-37129037/) 
-
-👤 **Rebaz Farid**
-
-- GitHub:[@githubhandle](https://github.com/rebaz36) 
-- LinkedIn:[LinkedIn](https://www.linkedin.com/in/rebaz-farid-1470b6155/) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-- [ ] **User creation and authorization**
-- [ ] **Creation of new posts**
-- [ ] **Creation of comments and likes for posts**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -212,6 +193,12 @@ Give a ⭐️ if you like this project!
 - Inspiration, Dedication
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- COPYRIGHTS -->
+
+## Copyrights <a name="copyrights"></a>
+
+Original design idea by [Gregoire Vella](https://www.behance.net/gregoirevella), under [Creative Commons License](https://creativecommons.org/licenses/by-nc/4.0/).
 
 <!-- LICENSE -->
 

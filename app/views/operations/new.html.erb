@@ -1,0 +1,23 @@
+<div class = "flex flex-row justify-between w-full bg-blue-600 text-white text-center pb-2 text-xl">
+  <h2 class = "ml-4" >ADD A NEW TRANSACTION</h2>
+  <%= button_to "LOG OUT", destroy_user_session_path, method: :delete, class: 'mr-4' %>
+</div>
+<%= form_with model: @operation, url: operations_path, method: :post do |form| %>
+  <div>
+    <%= form.text_field :name, autofocus: true, placeholder: "Transaction Name", class: 'border-1 border-gray-200 border-x-white w-full focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-400' %>
+  </div>
+  <div>
+    <%= form.number_field :amount, autofocus: true, placeholder: "Amount", class: 'border-1 border-gray-200 border-x-white w-full focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-400' %>
+  </div>
+  <div class = "text-gray-500">
+    <%= form.collection_select :group_id, @groups, :id, :name, prompt: 'Select Category' %>
+  </div>
+  <div class="actions">
+    <%= form.submit "SAVE TRANSACTION", class: 'w-full border-2 border-white hover:bg-blue-600 hover:text-white cursor-pointer' %>
+  </div>
+  <%= link_to group_path(params[:format]) do %>
+    <div class="mx-4">
+      <button class = "w-full border-2 bg-gray-300 hover:bg-blue-600 hover:text-white">CANCEL</button>
+    </div>
+  <% end %>
+<% end %>

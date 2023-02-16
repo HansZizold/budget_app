@@ -1,4 +1,12 @@
-<h2 class = "w-full bg-blue-600 text-white text-center pb-2 text-xl">ADD A NEW CATEGORY</h2>
+<div class = "flex flex-row justify-between w-full bg-blue-600 text-white text-center pb-2 text-xl">
+  <h2 class = "ml-4" >ADD A NEW CATEGORY</h2>
+  <%= button_to "LOG OUT", destroy_user_session_path, method: :delete, class: 'mr-4' %>
+</div>
+<%= link_to groups_path do %>
+  <div class="mx-4">
+    <button class = "w-full border-2 bg-gray-300 hover:bg-blue-600 hover:text-white">CATEGORIES PAGE</button>
+  </div>
+<% end %>
 <%= form_with model: @group, url: groups_path, method: :post do |form| %>
   <div class="field">
     <%= form.text_field :name, autofocus: true, placeholder: "Name", class: 'border-1 border-gray-200 border-x-white w-full focus:border-gray-400' %>
@@ -7,6 +15,6 @@
     <%= form.file_field :icon, autofocus: true, placeholder: "Image Name", class: 'border-1 border-gray-200 border-x-white w-full focus:border-gray-400' %>
   </div>
   <div class="actions">
-    <%= form.submit "ADD CATEGORY", class: 'w-full border-2 border-white hover:bg-blue-600 hover:text-white cursor-pointer' %>
+    <%= form.submit "SAVE CATEGORY", class: 'w-full border-2 border-white hover:bg-blue-600 hover:text-white cursor-pointer' %>
   </div>
 <% end %>
