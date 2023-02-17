@@ -35,3 +35,7 @@ oper1.groups.create(name: 'Supplies', icon: 'supplies.png', user: user1)
 
 group1.operations
 oper5.groups
+
+- Agregar el nonbre del usuario logueado
+- Transactions page & Add a new category: back button
+

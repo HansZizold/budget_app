@@ -7,10 +7,8 @@ RSpec.describe 'Group Index', type: :feature do
     @user.confirm
     sign_in @user
 
-    @cat = Group.new(name: 'Test Group', icon: 'test.png', user: @user)
-
-    @addfood = "a[href='/groups/new']"
-
+    @addcat = "a[href='/groups/new']"
+    @group = Group.create(name: 'Entertainment', user: @user)
     visit groups_path
   end
 
@@ -19,11 +17,13 @@ RSpec.describe 'Group Index', type: :feature do
   end
 
   it 'When I click on Add Category, I am redirected to the Category Creation form' do
-    find(@addfood.to_s).click
+    find(@addcat.to_s).click
     expect(page).to have_content('ADD A NEW CATEGORY')
   end
 
-  it 'shows the name of the category created: Test Group' do
-    expect(page).to have_content('Test Group')
+  it 'When clicking on a category, I am redirected to the detaile of that category Page,
+  and I can add a new transaction' do
+    click_link 'Entertainment'
+    expect(page).to have_content('ADD A NEW TRANSACTION')
   end
 end

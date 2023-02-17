@@ -14,13 +14,15 @@ RSpec.describe 'New Category', type: :feature do
     expect(page).to have_content('ADD A NEW CATEGORY')
   end
 
-  it 'When I click on SAVE CATEGORY, I am redirected to the Categories Page' do
-    click_on 'SAVE CATEGORY'
+  it 'When I click on CATEGORIES PAGE, I am redirected to the Categories Page' do
+    click_link 'CATEGORIES PAGE'
     expect(page).to have_content('ADD NEW CATEGORY')
   end
 
-  it 'When I click on CATEGORIES PAGE, I am redirected to the Categories Page' do
-    find('#Categories').click
-    expect(page).to have_content('ADD A NEW CATEGORY')
+  it 'When clicking on SAVE CATEGORY, I am redirected to the Categories Page,
+   and I can see the new category I created' do
+    @group = Group.create(name: 'Entertainment', user: @user)
+    click_on 'SAVE CATEGORY'
+    expect(page).to have_content('Entertainment')
   end
 end

@@ -12,12 +12,12 @@ RSpec.describe 'Budget Index', type: :feature do
   end
 
   it 'When I click on LOG IN, I am redirected to the Log In page' do
-    click_button('LOG IN', exact: true)
+    click_link 'LOG IN'
     expect(page).to have_content('Remember me')
   end
 
   it 'When I click on SIGN UP, I am redirected to the Sign Up page' do
-    click_button('SIGN UP', exact: true)
-    expect(page).to have_content('SIGN UP')
+    click_link 'SIGN UP'
+    expect(page).to have_content('Log in')
   end
 end
