@@ -10,7 +10,8 @@
     <%= form.number_field :amount, autofocus: true, placeholder: "Amount", class: 'border-1 border-gray-200 border-x-white w-full focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-400' %>
   </div>
   <div class = "text-gray-500">
-    <%= form.collection_select :group_id, @groups, :id, :name, prompt: 'Select Category' %>
+    <%= form.label :food_id, "Select Category:", class: "ml-3" %>
+    <%= form.collection_select :group_id, @groups, :id, :name %>
   </div>
   <div class="actions">
     <%= form.submit "SAVE TRANSACTION", class: 'w-full border-2 border-white hover:bg-blue-600 hover:text-white cursor-pointer' %>

@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :update_allowed_parameters, if: :devise_controller?
 
   def after_sign_out_path_for(*)
-    new_user_session_path
+    budget_index_path
   end
 
   protected
