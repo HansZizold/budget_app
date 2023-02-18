@@ -1,33 +1,35 @@
-<h2 class = "w-full bg-blue-600 text-white text-center pt-2 pb-2 mb-2">REGISTER</h2>
+<h2 class = "w-full bg-[#3778c2] text-white text-center text-xl py-3 mb-2">REGISTER</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class = "bg-[#f1f3f2]">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.text_field :name, autofocus: true, placeholder: "Name", class: 'border-1 border-gray-200 border-x-white w-full focus:border-gray-400' %>
-  </div>
+    <div class="field">
+      <%= f.text_field :name, autofocus: true, placeholder: "Name", class: 'border-1 bg-[#fdfdfd] text-[#9e9e9e] border-[#9e9e9e] border-x-white border-b-white w-full focus:border-gray-400' %>
+    </div>
 
-  <div class="field">
-    <%= f.text_field :surname, autofocus: true, placeholder: "Surname", class: 'border-1 border-gray-200 border-x-white w-full focus:border-gray-400' %>
-  </div>
+    <div class="field">
+      <%= f.text_field :surname, autofocus: true, placeholder: "Surname", class: 'border-1 bg-[#fdfdfd] text-[#9e9e9e] border-[#9e9e9e] border-x-white border-b-white w-full focus:border-gray-400' %>
+    </div>
 
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, placeholder: "Email", autocomplete: "email", class: 'border-1 border-gray-200 border-x-white w-full focus:border-gray-400' %>
-  </div>
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, placeholder: "Email", autocomplete: "email", class: 'border-1 bg-[#fdfdfd] text-[#9e9e9e] border-[#9e9e9e] border-x-white border-b-white w-full focus:border-gray-400' %>
+    </div>
 
-  <div class="field">
-    <%= f.password_field :password, placeholder: "Password (#{@minimum_password_length} characters minimum)", autocomplete: "new-password", class: 'border-1 border-gray-200 border-x-white w-full focus:border-gray-400' %>
-  </div>
+    <div class="field">
+      <%= f.password_field :password, placeholder: "Password (#{@minimum_password_length} characters minimum)", autocomplete: "new-password", class: 'border-1 bg-[#fdfdfd] text-[#9e9e9e] border-[#9e9e9e] border-x-white border-b-white w-full focus:border-gray-400' %>
+    </div>
 
-  <div class="field">
-    <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", autocomplete: "new-password", class: 'border-1 border-gray-200 border-x-white w-full focus:border-gray-400' %>
-  </div>
+    <div class="field">
+      <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", autocomplete: "new-password", class: 'border-1 bg-[#fdfdfd] text-[#9e9e9e] border-[#9e9e9e] border-x-white w-full focus:border-gray-400' %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "SIGN UP", class: 'w-full border-2 border-white hover:bg-blue-600 hover:text-white cursor-pointer' %>
-  </div>
-<% end %>
+    <div class="flex flex-col items-center mx-8 mt-8">
+      <%= render "devise/shared/links" %>
+    </div>
 
-<div class="links ml-8 mt-8 felx flex-col items-start sm:w-96 sm:ml-4 sm:text-xl">
-  <%= render "devise/shared/links" %>
+    <div class = "fixed bottom-0 w-full bg-[#60b524] text-[#f1f3f2] py-6 text-center">
+      <%= f.submit "SIGN UP", class: 'w-[90%] py-3 border-2 border-[#f1f3f2] text-center cursor-pointer hover:text-lg' %>
+    </div>
+  <% end %>
 </div>

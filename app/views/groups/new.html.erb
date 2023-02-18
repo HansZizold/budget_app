@@ -1,20 +1,24 @@
-<div class = "flex flex-row justify-between w-full bg-blue-600 text-white text-center pb-2 text-xl">
-  <h2 class = "ml-4" >ADD A NEW CATEGORY</h2>
-  <%= button_to "LOG OUT", destroy_user_session_path, method: :delete, class: 'mr-4' %>
+<div class = "flex flex-row justify-start w-full bg-[#3778c2] text-white text-center py-3 mb-2 text-xl">
+  <%= button_to "EXIT", destroy_user_session_path, method: :delete, class: 'ml-4 text-[12px]' %>
+  <h2 class = "w-full mr-4" >ADD A NEW CATEGORY</h2>
 </div>
-<%= link_to groups_path do %>
-  <div class="mx-4">
-    <button id = "Categories", class = "w-full border-2 bg-gray-300 hover:bg-blue-600 hover:text-white">CATEGORIES PAGE</button>
-  </div>
-<% end %>
+
 <%= form_with model: @group, url: groups_path, method: :post do |form| %>
   <div class="field">
-    <%= form.text_field :name, autofocus: true, placeholder: "Name", class: 'border-1 border-gray-200 border-x-white w-full focus:border-gray-400' %>
+    <%= form.text_field :name, autocomplete: "email", placeholder: "Name", class: 'border-1 border-[#9e9e9e] border-x-white w-full focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-400' %>
   </div>
   <div class="field">
-    <%= form.file_field :icon, autofocus: true, placeholder: "Image Name", class: 'border-1 border-gray-200 border-x-white w-full focus:border-gray-400' %>
+    <%= form.file_field :icon, placeholder: "Image Name", class: 'border-1 border-[#9e9e9e] border-x-white w-full' %>
   </div>
-  <div class="actions">
-    <%= form.submit "SAVE CATEGORY", class: 'w-full border-2 border-white hover:bg-blue-600 hover:text-white cursor-pointer' %>
+
+  <div class="fixed bottom-0 w-full text-center">
+    <div class = "w-full bg-[#60b524] text-[#f1f3f2] pt-4 pb-2 text-center">
+      <%= form.submit "SAVE CATEGORY", class: 'w-[90%] py-2 text-center border-2 border-[#f1f3f2] cursor-pointer hover:text-lg' %>
+    </div>
+    <%= link_to groups_path do %>
+      <button id = "Categories", class = "w-full bg-[#60b524] text-[#f1f3f2] pb-4">
+        <p class = "mx-4 py-2 border-2 border-[#f1f3f2] hover:text-lg">GO TO CATEGORIES PAGE</p>
+      </button>
+    <% end %>
   </div>
 <% end %>

@@ -1,24 +1,28 @@
-<div class = "flex flex-row justify-between w-full bg-blue-600 text-white text-center pb-2 text-xl">
-  <h2 class = "ml-4" >ADD A NEW TRANSACTION</h2>
-  <%= button_to "LOG OUT", destroy_user_session_path, method: :delete, class: 'mr-4' %>
+<div class = "flex flex-row justify-start w-full bg-[#3778c2] text-white text-center py-3 mb-2 text-xl">
+  <%= button_to "EXIT", destroy_user_session_path, method: :delete, class: 'ml-4 text-[12px]' %>
+  <h2 class = "w-full mr-4" >ADD A NEW TRANSACTION</h2>
 </div>
+
 <%= form_with model: @operation, url: operations_path, method: :post do |form| %>
   <div>
-    <%= form.text_field :name, autofocus: true, placeholder: "Transaction Name", class: 'border-1 border-gray-200 border-x-white w-full focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-400' %>
+    <%= form.text_field :name, placeholder: "Transaction Name", class: 'border-1 border-[#9e9e9e] border-x-white w-full focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-400' %>
   </div>
   <div>
-    <%= form.number_field :amount, autofocus: true, placeholder: "Amount", class: 'border-1 border-gray-200 border-x-white w-full focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-400' %>
+    <%= form.number_field :amount, placeholder: "Amount", class: 'border-1 border-[#9e9e9e] border-x-white w-full focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-400' %>
   </div>
-  <div class = "text-gray-500">
+  <div class = "border-1 border-[#9e9e9e]">
     <%= form.label :food_id, "Select Category:", class: "ml-3" %>
     <%= form.collection_select :group_id, @groups, :id, :name %>
   </div>
-  <div class="actions">
-    <%= form.submit "SAVE TRANSACTION", class: 'w-full border-2 border-white hover:bg-blue-600 hover:text-white cursor-pointer' %>
-  </div>
-  <%= link_to group_path(params[:format]) do %>
-    <div class="mx-4">
-      <button class = "w-full border-2 bg-gray-300 hover:bg-blue-600 hover:text-white">CANCEL</button>
+
+  <div class = "fixed bottom-0 w-full text-center">
+    <div class="w-full bg-[#60b524] text-[#f1f3f2] pt-4 pb-2 text-center">
+      <%= form.submit "SAVE TRANSACTION", class: 'w-[90%] py-2 text-center border-2 border-[#f1f3f2] cursor-pointer hover:text-lg' %>
     </div>
-  <% end %>
+    <%= link_to group_path(params[:format]) do %>
+      <button class = "w-full bg-[#60b524] text-[#f1f3f2] pb-4">
+        <p class = "mx-4 py-2 border-2 border-[#f1f3f2] hover:text-lg">CANCEL</p>
+      </button>
+    <% end %>
+  </div>
 <% end %>

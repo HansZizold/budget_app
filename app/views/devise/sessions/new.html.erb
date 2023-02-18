@@ -1,24 +1,26 @@
-<h2 class = "w-full bg-blue-600 text-white text-center pt-2 pb-2 mb-2">LOG IN</h2>
+<h2 class = "w-full bg-[#3778c2] text-white text-center text-xl py-3 mb-2">LOGIN</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, placeholder: "Email", autocomplete: "email", class: 'border-1 border-gray-200 border-x-white w-full focus:border-gray-400' %>
-  </div>
-
-  <div class="field">
-    <%= f.password_field :password, placeholder: "Password", autocomplete: "new-password", class: 'border-1 border-gray-200 border-x-white w-full focus:border-gray-400' %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
+<div class = "bg-[#f1f3f2]">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.email_field :email, autofocus: true, placeholder: "Email", autocomplete: "email", class: 'border-1 bg-[#fdfdfd] text-[#9e9e9e] w-full border-[#9e9e9e] border-x-white border-b-white' %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password, placeholder: "Password", autocomplete: "new-password", class: 'border-1 bg-[#fdfdfd] text-[#9e9e9e] w-full border-[#9e9e9e] border-x-white' %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="text-[#9e9e9e] ml-4 mb-2 text-center border-none">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+
+    <div class = "fixed bottom-0 w-full bg-[#60b524] text-[#f1f3f2] py-6 text-center">
+      <%= f.submit "LOG IN", class: 'w-[90%] py-3 border-2 border-[#f1f3f2] text-center cursor-pointer hover:text-lg' %>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "LOG IN", class: 'w-full border-2 border-white hover:bg-blue-600 hover:text-white cursor-pointer' %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

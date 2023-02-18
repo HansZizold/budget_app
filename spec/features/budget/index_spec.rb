@@ -18,6 +18,6 @@ RSpec.describe 'Budget Index', type: :feature do
 
   it 'When I click on SIGN UP, I am redirected to the Sign Up page' do
     click_link 'SIGN UP'
-    expect(page).to have_content('Log in')
+    expect(page).to have_content('LOG IN')
   end
 end

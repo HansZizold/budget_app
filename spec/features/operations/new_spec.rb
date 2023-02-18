@@ -19,7 +19,7 @@ RSpec.describe 'Operation New4', type: :feature do
 
   it 'When I click on CANCEL, I am redirected to the category details page' do
     click_link 'CANCEL'
-    expect(page).to have_content('Entertainment Amount')
+    expect(page).to have_content('Entertainment')
   end
 
   it 'When I click on SAVE TRANSACTION, I can see the new transaction on the category details page' do
