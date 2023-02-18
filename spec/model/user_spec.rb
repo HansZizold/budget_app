@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   user = User.new(name: 'John', surname: 'Doe', email: 'john@test.com', password: '123456')
-  user.confirm
   before { user.save }
 
   it 'should have a name' do

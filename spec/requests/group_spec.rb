@@ -5,7 +5,6 @@ RSpec.describe Group, type: :request do
 
   describe 'Index action' do
     before(:each) do
-      user.confirm
       sign_in user
       subject { Group.create(user:, name: 'test', icon: 'test.png') }
       get groups_path
@@ -30,7 +29,6 @@ RSpec.describe Group, type: :request do
 
   describe 'New action' do
     before(:each) do
-      user.confirm
       sign_in user
       subject { Group.create(user:, name: 'test', icon: 'test.png') }
       get new_group_path

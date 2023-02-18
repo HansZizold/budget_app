@@ -4,7 +4,6 @@ RSpec.describe Operation, type: :model do
   let(:user) { User.create(name: 'John', surname: 'Doe', email: 'john@test.com', password: '123456') }
 
   it 'name must not be blankcharacters' do
-    user.confirm
     subject { Operation.create(user:, name: 'opertest', amount: 10) }
     subject.name = ''
     expect(subject).to_not be_valid

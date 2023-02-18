@@ -4,7 +4,6 @@ RSpec.describe 'Group Show', type: :feature do
   before :each do
     @user = User.create(name: 'John', surname: 'Doe', email: 'john@mail.com',
                         password: '123456', password_confirmation: '123456')
-    @user.confirm
     sign_in @user
 
     @group = Group.create(name: 'Entertainment', user: @user)
