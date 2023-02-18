@@ -100,7 +100,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Coming soon ...
+- [budget App](https://budget-1bv7.onrender.com/groups)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -166,6 +166,12 @@ To run tests, run the following command:
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Edit and delete Categories**
+- [ ] **Edit and delete Transacions**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

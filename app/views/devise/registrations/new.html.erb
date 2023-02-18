@@ -20,10 +20,6 @@
       <%= f.password_field :password, placeholder: "Password (#{@minimum_password_length} characters minimum)", autocomplete: "new-password", class: 'border-1 bg-[#fdfdfd] text-[#9e9e9e] border-[#9e9e9e] border-x-white border-b-white w-full focus:border-gray-400' %>
     </div>
 
-    <div class="field">
-      <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", autocomplete: "new-password", class: 'border-1 bg-[#fdfdfd] text-[#9e9e9e] border-[#9e9e9e] border-x-white w-full focus:border-gray-400' %>
-    </div>
-
     <div class="flex flex-col items-center mx-8 mt-8">
       <%= render "devise/shared/links" %>
     </div>
