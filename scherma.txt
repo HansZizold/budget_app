@@ -1,0 +1,41 @@
+## MODELS
+rails g model User name:string surname:string
+rails g model Group name:string icon:string user:references
+rails g model Operation name:string amount:float user:references
+rails g model Groupoperation group:references operation:references
+
+-- Add role column to users table for authorization activity
+rails generate migration AddRoleToUsers
+  def change
+    add_column :users, :role, :string
+  end
+
+## DATA
+user1 = User.create(name: 'Hans', surname: 'Zizold')
+
+## CREATING GROUPS AND OPERATIONS LIKE THIS WORKS, BUT THE MIDDLE TABLE DOESN'T UPDATE
+group1 = Group.create(name: 'Basic Services', icon: 'basic.png', user: user1)
+group2 = Group.create(name: 'Medical Services', icon: 'medical.png', user: user1)
+group3 = Group.create(name: 'Supplies', icon: 'supplies.png', user: user1)
+oper1 = Operation.create(name: 'Water', amount: 0, user: user1)
+oper2 = Operation.create(name: 'Light', amount: 0, user: user1)
+oper3 = Operation.create(name: 'Oculist', amount: 0, user: user1)
+oper4 = Operation.create(name: 'Dentist', amount: 0, user: user1)
+oper5 = Operation.create(name: 'Bulbs', amount: 50.00, user: user1)
+
+## CREATING GROUPS AND OPERATIONS LIKE THIS WORKS, AND THE MIDDLE TABLE UPDATE SO YOU CAN CONSULT OPERATIONS FROM GROUPS AND VICE VERSA
+group1.operations.create(name: 'Water', amount: 80.50, user: user1)
+group1.operations.create(name: 'Light', amount: 201.65, user: user1)
+group2.operations.create(name: 'Restaurant', amount: 285.00, user: user1)
+group2.operations.create(name: 'Movies', amount: 84.00, user: user1)
+group10.operations.create(name: 'Internet', amount: 299.00, user: user)
+group10.operations.create(name: 'Fixed Line', amount: 31.10, user: user)
+
+oper1.groups.create(name: 'Supplies', icon: 'supplies.png', user: user1)
+
+group1.operations
+oper5.groups
+
+- Agregar el nonbre del usuario logueado
+- Transactions page & Add a new category: back button
+
