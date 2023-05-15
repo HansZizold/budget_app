@@ -37,3 +37,5 @@
 !/app/assets/builds/.keep
 
 .env
+
+/config/credentials/production.key

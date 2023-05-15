@@ -1,47 +1,18 @@
-# fly.toml app configuration file generated for empty-feather-1784 on 2023-05-15T16:28:04-04:00
+# fly.toml app configuration file generated for small-wave-7734 on 2023-05-15T18:42:02-04:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "empty-feather-1784"
-kill_signal = "SIGINT"
-kill_timeout = 5
+app = "small-wave-7734"
 primary_region = "scl"
-processes = []
+console_command = "/rails/bin/rails console"
 
-[build]
-
-[env]
-
-[experimental]
-  auto_rollback = true
-
-[[services]]
-  http_checks = []
+[http_service]
   internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
   min_machines_running = 0
-  processes = ["app"]
-  protocol = "tcp"
-  script_checks = []
-  [services.concurrency]
-    hard_limit = 25
-    soft_limit = 20
-    type = "connections"
-
-  [[services.ports]]
-    force_https = true
-    handlers = ["http"]
-    port = 80
-
-  [[services.ports]]
-    handlers = ["tls", "http"]
-    port = 443
-
-  [[services.tcp_checks]]
-    grace_period = "1s"
-    interval = "15s"
-    restart_limit = 0
-    timeout = "2s"
 
 [[statics]]
   guest_path = "/rails/public"

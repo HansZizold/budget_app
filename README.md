@@ -100,7 +100,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [budget App](https://budget-1bv7.onrender.com/groups)
+- [budget App](https://small-wave-7734.fly.dev/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
