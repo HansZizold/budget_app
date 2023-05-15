@@ -95,3 +95,5 @@ gem 'tailwindcss-rails', '~> 2.0'
 
 # File Uploading
 gem 'activestorage'
+
+gem "dockerfile-rails", ">= 1.2", :group => :development
