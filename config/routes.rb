@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   # Defines the root path route ("/")
-  root to: 'groups#index'
+  root to: 'budget#index'
 
   resources :budget, only: %i[index]
   resources :users, only: %i[index]
